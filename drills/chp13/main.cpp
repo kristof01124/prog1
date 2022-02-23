@@ -19,7 +19,7 @@ int main()
 
     Lines x;
     Vector_ref<Rectangle> rect;
-    
+
     bool grid[8][8] = {0};
 
     for (int i = 0; i<=800; i+=100) {

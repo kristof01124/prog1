@@ -1,7 +1,7 @@
 #include <cstdio>
 #include <exception>
 #include "../../include/Simple_window.h"
-#include "Lines_window.h"
+#include "../../include/Lines_window.h"
 
 /*
     g++ main.cpp ../../include/*.cpp -o main `fltk-config --ldflags --use-images` -std=c++11

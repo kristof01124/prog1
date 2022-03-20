@@ -9,7 +9,7 @@
 
 int main() {
     try {
-        Lines_window win(Point(100,100), 600, 400, "lines");
+        Lines_window win(Point(100,100), 1000, 1000, "lines");
         return gui_main();
     }
     catch (exception& e) {

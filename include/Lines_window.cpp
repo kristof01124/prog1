@@ -10,13 +10,21 @@ Lines_window::Lines_window(Point xy, int w, int h, const string& title)
     next_y{Point{450,0}, 50, 40, "next y:"},
     xy_out{Point{100,0}, 100, 40, "current (x,y):"},
     color_menu{Point{x_max()-70,40},70,20,Menu::vertical,"color"},
-    menu_button{Point{x_max()-80,30}, 80, 20, "color menu", [](Address, Address pw) {reference_to<Lines_window>(pw).menu_pressed();}}
+    menu_button{Point{x_max()-80,40}, 80, 20, "color menu", [](Address, Address pw) {reference_to<Lines_window>(pw).menu_pressed();}},
+    ls_menu{Point{x_max()-200,40},70,20,Menu::vertical,"color"},
+    ls_menu_button{Point{x_max()-200,40}, 80, 20, "ls menu", [](Address, Address pw) {reference_to<Lines_window>(pw).ls_menu_pressed();}}
 {
     color_menu.attach(new Button{Point{0,0},0,0,"red",[](Address, Address pw) {reference_to<Lines_window>(pw).red_pressed();}});
     color_menu. attach(new Button{Point{0,0},0,0,"blue",[](Address, Address pw) {reference_to<Lines_window>(pw).blue_pressed();}});
     color_menu. attach(new Button{Point{0,0},0,0,"black",[](Address, Address pw) {reference_to<Lines_window>(pw).black_pressed();}});
+    ls_menu.attach(new Button{Point{0,0},0,0,"solid",[](Address, Address pw) {reference_to<Lines_window>(pw).solid_pressed();}});
+    ls_menu.attach(new Button{Point{0,0},0,0,"dot",[](Address, Address pw) {reference_to<Lines_window>(pw).dot_pressed();}});
+    ls_menu.attach(new Button{Point{0,0},0,0,"dash",[](Address, Address pw) {reference_to<Lines_window>(pw).dash_pressed();}});
     attach(color_menu);
+    attach(ls_menu);
+    ls_menu.hide();
     color_menu.hide();
+    attach(ls_menu_button);
     attach(menu_button);
     attach(next_button);
     attach(quit_button);

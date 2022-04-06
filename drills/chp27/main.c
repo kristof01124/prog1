@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 void foo(char* p, int x) {
-    printf("p is %s and x is %d\n", p, x);
+    printf("p is \"%s\" and x is %d\n", p, x);
 }
 
 int main() {

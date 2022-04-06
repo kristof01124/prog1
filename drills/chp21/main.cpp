@@ -17,6 +17,7 @@ struct Item {
 int main() {
     //Vector part
     {
+    std::cout << "----- VECTOR PART -------------" << std::endl;
     std::vector<Item> vi;
     std::ifstream in("in.txt");
     for (int i = 0; i < 10; ++i) {
@@ -62,6 +63,7 @@ int main() {
     }
     //List part
     {
+    std::cout << "-------LIST PART ----------" << std::endl;
     std::list<Item> vi;
     std::ifstream in("in.txt");
     for (int i = 0; i < 10; ++i) {

@@ -1,7 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <iostream>
-using namespace std;
+#include <sstream>
 
 template<typename T>
 class S {
@@ -75,10 +75,17 @@ std::istream& operator >> (std::istream& in, std::vector<T>& other){
   other.clear();
   T val;
   while (temp != '}') {
-    in >> val;
-    other.push_back(val);
+    std::stringstream word;
     in >> temp;
+    std::cout << temp << std::endl;
+    while (temp!= '}' and temp != ',') {
+      word << temp;
+      in >> temp;
+    }
+    word >> val;
+    other.push_back(val);
   }
+  return in;
 }
 
 

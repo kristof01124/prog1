@@ -14,6 +14,12 @@ struct Item {
     }
 };
 
+struct Cmp {
+    bool operator()(const Item& left, const Item& right) {
+        return left.name < right.name;
+    }
+};
+
 int main() {
     //Vector part
     {
@@ -30,7 +36,7 @@ int main() {
     }
     for (Item i:vi) 
         i.print(std::cout);
-    sort(vi.begin(), vi.end(), [](Item left, Item right) {return left.name < right.name;});
+    sort(vi.begin(), vi.end(), Cmp());
     std::cout << "Sorted by name:\n";
     for (Item i:vi) 
         i.print(std::cout);
